@@ -1,0 +1,104 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- Toolbar -->
+
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+
+  <!-- Resources -->
+
+  <!-- Next Steps -->
+
+  <!-- Terminal -->
+
+
+  <!-- Links -->
+
+
+  <!-- Footer -->
+    <section class="section-padding" id="booking">
+      <div class="container">
+          <div class="row">
+
+              <div class="col-lg-8 col-12 mx-auto">
+                      <mat-stepper #stepper>
+                          <mat-step [stepControl]="firstFormGroup">
+                            <form #userlogin = "ngForm" (ngSubmit)="onSubmit(userlogin.value)">
+                                  <div class="row">
+                                      <div class="col-lg-6 col-12">
+                                          <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
+                                      </div>
+
+                                      <div class="col-lg-6 col-12">
+                                          <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
+                                      </div>
+
+                                      <div class="col-lg-6 col-12">
+                                          <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="Phone: 123-456-7890">
+                                      </div>
+
+                                      <div class="col-lg-6 col-12">
+                                          <input type="date" name="date" id="date" value="" class="form-control">
+
+                                      </div>
+
+                                      <div class="col-12">
+                                          <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
+                                      </div>
+
+                                      <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                          <button type="submit" class="form-control" id="submit-button"  >Book Now</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </mat-step>
+                          <mat-step [stepControl]="secondFormGroup" label="Select your doctor">
+                            <form [formGroup]="secondFormGroup">
+                              <mat-form-field appearance="fill">
+                                <mat-label>Address</mat-label>
+                                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                                       required>
+                              </mat-form-field>
+                              <div>
+                                <button mat-button matStepperPrevious>Back</button>
+                                <button mat-button matStepperNext>Next</button>
+                              </div>
+                            </form>
+                          </mat-step>
+                          <mat-step>
+                            <ng-template matStepLabel>Appointment details</ng-template>
+                            <p>You are now done.</p>
+                            <div>
+                              <button mat-button matStepperPrevious>Back</button>
+                              <button mat-button (click)="stepper.reset()">Reset</button>
+                            </div>
+                          </mat-step>
+                      </mat-stepper>
+              </div>
+
+          </div>
+      </div>
+
+
+  </section>
+
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
