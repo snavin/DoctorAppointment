@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,8 @@ export class AppComponent {
     });
 
 
-  onSubmit(event: any) {
+  onSubmit(event: NgForm) {
     console.log("Form Submitted!");
-    console.log(event)
+    console.log(event.value);
   }
 }

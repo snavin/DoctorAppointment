@@ -691,3 +691,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDB9ebri5ZkCyPTZC0DCrOxolXwqlPbRCLX0CjHh39U
 -----END SSH HOST KEY KEYS-----
 [   58.219795] cloud-init[1312]: Cloud-init v. 22.4.2-0ubuntu0~18.04.1 running 'modules:final' at Wed, 08 Mar 2023 19:25:09 +0000. Up 57.19 seconds.
 [   58.232781] cloud-init[1312]: Cloud-init v. 22.4.2-0ubuntu0~18.04.1 finished at Wed, 08 Mar 2023 19:25:10 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 58.15 seconds
+[168848.608911] INFO: rcu_sched self-detected stall on CPU
+[168848.608914] INFO: rcu_sched self-detected stall on CPU
+[168848.618088] 	0-...!: (1 GPs behind) idle=00a/1/0 softirq=377992/378000 fqs=0 
+[168848.618090] 	 (t=16948 jiffies g=163826 c=163825 q=8)
+[168848.618099] rcu_sched kthread starved for 16948 jiffies! g163826 c163825 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=1
+[168848.689401] 	1-...!: (1 ticks this GP) idle=28a/1/0 softirq=367449/367449 fqs=0 
+[168848.693761] 	 (t=16969 jiffies g=163826 c=163825 q=222)
+[168848.696244] rcu_sched kthread starved for 16969 jiffies! g163826 c163825 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x200 ->cpu=1

@@ -32,18 +32,18 @@
               <div class="col-lg-8 col-12 mx-auto">
                       <mat-stepper #stepper>
                           <mat-step [stepControl]="firstFormGroup">
-                            <form #userlogin = "ngForm" (ngSubmit)="onSubmit(userlogin.value)">
+                            <form #userlogin = "ngForm" (ngSubmit)="onSubmit(userlogin)">
                                   <div class="row">
                                       <div class="col-lg-6 col-12">
-                                          <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
+                                          <input type="text" name="name" id="name" class="form-control" placeholder="Full name" ngModel required >
                                       </div>
 
                                       <div class="col-lg-6 col-12">
-                                          <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
+                                          <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" ngModel required>
                                       </div>
 
                                       <div class="col-lg-6 col-12">
-                                          <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="Phone: 123-456-7890">
+                                          <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" ngModel placeholder="Phone: 123-456-7890">
                                       </div>
 
                                       <div class="col-lg-6 col-12">
