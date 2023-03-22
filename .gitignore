@@ -10,3 +10,4 @@ Vagrantfile
 .vagrant/machines/default/virtualbox/synced_folders
 .vagrant/machines/default/virtualbox/vagrant_cwd
 src/assets/.gitkeep
+ubuntu-bionic-18.04-cloudimg-console.log

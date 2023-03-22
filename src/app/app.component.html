@@ -28,61 +28,89 @@
     <section class="section-padding" id="booking">
       <div class="container">
           <div class="row">
-
               <div class="col-lg-8 col-12 mx-auto">
-                      <mat-stepper #stepper>
-                          <mat-step [stepControl]="firstFormGroup">
-                            <form #userlogin = "ngForm" (ngSubmit)="onSubmit(userlogin)">
-                                  <div class="row">
-                                      <div class="col-lg-6 col-12">
-                                          <input type="text" name="name" id="name" class="form-control" placeholder="Full name" ngModel required >
-                                      </div>
+                  <mat-stepper #stepper>
+                    <mat-step [stepControl]="firstFormGroup" label="booking info">
+                      <form #userlogin = "ngForm" (ngSubmit)="onSubmit(userlogin)">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Full name" ngModel required >
+                                </div>
 
-                                      <div class="col-lg-6 col-12">
-                                          <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" ngModel required>
-                                      </div>
+                                <div class="col-lg-6 col-12">
+                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" ngModel required>
+                                </div>
 
-                                      <div class="col-lg-6 col-12">
-                                          <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" ngModel placeholder="Phone: 123-456-7890">
-                                      </div>
+                                <div class="col-lg-6 col-12">
+                                    <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" ngModel placeholder="Phone: 123-456-7890">
+                                </div>
 
-                                      <div class="col-lg-6 col-12">
-                                          <input type="date" name="date" id="date" value="" class="form-control">
+                                <div class="col-lg-6 col-12">
+                                    <input type="date" name="date" id="date" value="" class="form-control">
 
-                                      </div>
+                                </div>
 
-                                      <div class="col-12">
-                                          <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
-                                      </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
+                                </div>
 
-                                      <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                          <button type="submit" class="form-control" id="submit-button"  >Book Now</button>
-                                      </div>
-                                  </div>
-                              </form>
-                          </mat-step>
-                          <mat-step [stepControl]="secondFormGroup" label="Select your doctor">
-                            <form [formGroup]="secondFormGroup">
-                              <mat-form-field appearance="fill">
-                                <mat-label>Address</mat-label>
-                                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                                       required>
-                              </mat-form-field>
-                              <div>
-                                <button mat-button matStepperPrevious>Back</button>
-                                <button mat-button matStepperNext>Next</button>
-                              </div>
-                            </form>
-                          </mat-step>
-                          <mat-step>
-                            <ng-template matStepLabel>Appointment details</ng-template>
-                            <p>You are now done.</p>
-                            <div>
-                              <button mat-button matStepperPrevious>Back</button>
-                              <button mat-button (click)="stepper.reset()">Reset</button>
+                                <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                    <button type="submit" class="form-control" id="submit-button"  >Book Now</button>
+                                </div>
                             </div>
-                          </mat-step>
-                      </mat-stepper>
+                      </form>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup" label="Select your doctor">
+                      <mat-grid-list cols="2" rowHeight="2:1">
+                        <mat-grid-tile *ngFor="let each_doctor of doctorslist">
+                          <mat-card class="example-card">
+                            <mat-card-header>
+                              <mat-card-title-group>
+                                <mat-card-title>{{ each_doctor }}</mat-card-title>
+                                <mat-card-subtitle>Large</mat-card-subtitle>
+                                <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                              </mat-card-title-group>
+                            </mat-card-header>
+                            <mat-card-content>
+                              {{longText}}
+                            </mat-card-content>
+                          </mat-card>
+                        </mat-grid-tile>
+                      </mat-grid-list>
+                    </mat-step>
+                    <mat-step  label="appointment">
+                      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="specality">
+                          <th mat-header-cell *matHeaderCellDef> specality </th>
+                          <td mat-cell *matCellDef="let element"> {{element.specialist}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="date">
+                          <th mat-header-cell *matHeaderCellDef> date </th>
+                          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="time">
+                          <th mat-header-cell *matHeaderCellDef> time </th>
+                          <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="cancel">
+                          <th mat-header-cell *matHeaderCellDef></th>
+                          <td mat-cell *matCellDef="let element"><button mat-raised-button color="warn">CANCEL</button></td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+                    </mat-step>
+                  </mat-stepper>
               </div>
 
           </div>

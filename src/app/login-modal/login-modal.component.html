@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Sign in</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-tab-group>
+        <mat-tab label="Login"> 
+            <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </mat-tab>
+        <mat-tab label="Signup"> 
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>
