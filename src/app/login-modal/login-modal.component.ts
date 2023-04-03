@@ -67,7 +67,9 @@ export class LoginModalComponent {
 
     this.httpClient.post('http://localhost:8000/api/sign_up/', formData).subscribe((data) => {
       console.log(data);
-      this._snackBar.open( JSON.stringify(data), "success");
+      this._snackBar.open( "User has been created successfully", "success",{
+        duration: 3000
+      });
       this.dialogRef.close();
     })
   }

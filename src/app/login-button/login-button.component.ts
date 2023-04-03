@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-button',
@@ -14,7 +15,8 @@ export class LoginButtonComponent {
   username: string = "";
 
   constructor(public dialog: MatDialog,
-     private httpClient: HttpClient) {}
+     private httpClient: HttpClient,
+     private _snackBar: MatSnackBar) {}
 
   ngOnInit(){
     const token_value = localStorage.getItem('tokens')
@@ -47,6 +49,9 @@ export class LoginButtonComponent {
       console.log(`Dialog result: ${result}`);
       this.username = result.data.username;
       this.is_logged=true;
+      this._snackBar.open( "Logged in successfully", "success",{
+        duration: 3000
+      });
     });
   }
 

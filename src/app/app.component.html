@@ -78,6 +78,7 @@
                         <button class="btn btn-outline-primary" (click)="doctorSearch()">search</button> -->
                         <input type="search" class="form-control rounded" matInput [(ngModel)] = "doctor_search_input" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                         <button type="button" style="margin-top: 2%;" class="btn btn-primary" (click)="doctorSearch()">search</button>
+                        <button type="button" style="margin-top: 2%;" class="btn btn-primary" (click)="doctorSearchReset()">reset</button>
                       </div>
                      
 
@@ -107,7 +108,7 @@
                                 <mat-card-title-group style="margin-top: 20px;">
                                   <mat-card-title>{{ each_doctor.name }}</mat-card-title>
                                   <mat-card-subtitle>{{ each_doctor.speciality }}</mat-card-subtitle>
-                                  <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="130px" width="150px">
+                                  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="99px" width="150px">
                                 </mat-card-title-group>
                               </mat-card-header>
                               <mat-card-actions align="end">

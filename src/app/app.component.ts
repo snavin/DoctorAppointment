@@ -62,6 +62,11 @@ export class AppComponent {
     
   }
 
+  doctorSearchReset(){
+    this.doctor_search_input = "";
+    this.doctor_search_status = false;
+  }
+
   onSubmit(event: NgForm) {
     console.log("Form Submitted!");
     console.log(event.value);
@@ -91,7 +96,9 @@ export class AppComponent {
         console.log(this.doctorslist)
       })
     } else {
-      this._snackBar.open( "User not logged in", "failed");
+      this._snackBar.open( "User not logged in", "failed",{
+        duration: 3000
+      });
     }
   }
 
@@ -111,12 +118,16 @@ export class AppComponent {
       formData.append('doctor_id', event);
   
       this.httpClient.post('http://localhost:8000/api/createappointment/', formData, {headers: headers}).subscribe((data) =>  {
-        this._snackBar.open( JSON.stringify(data), "success");
+        this._snackBar.open( "Appointment has been booked", "success",{
+          duration: 3000
+        });
         console.log(data);
         this.getappointment();
       })
     } else {
-      this._snackBar.open( "User not logged in", "failed");
+      this._snackBar.open( "User not logged in", "failed",{
+        duration: 3000
+      });
     }
   }
 
@@ -138,7 +149,9 @@ export class AppComponent {
         this.appointment_list_status = true;
       })
     } else {
-      this._snackBar.open( "User not logged in", "failed");
+      this._snackBar.open( "User not logged in", "failed",{
+        duration: 3000
+      });
     }
   }
 
@@ -166,7 +179,9 @@ export class AppComponent {
         this.getappointment();
         })
     } else {
-      this._snackBar.open( "User not logged in", "failed");
+      this._snackBar.open( "User not logged in", "failed",{
+        duration: 3000
+      });
     }
   }
 
