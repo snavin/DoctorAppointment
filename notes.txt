@@ -1,0 +1,4 @@
+https://www.geeksforgeeks.org/how-to-use-jquery-in-angular/
+
+
+npm i --save-dev @types/jquery

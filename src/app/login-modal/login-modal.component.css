@@ -1,5 +1,7 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.custom-dialog-container .mat-dialog-container {
+  overflow-y: hidden;
+}
+
+.mat-mdc-tab-body-content {
+  overflow-y: hidden;
+}

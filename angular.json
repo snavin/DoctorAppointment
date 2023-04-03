@@ -22,17 +22,17 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/img"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/css/bootstrap.min.css",
-              "src/css/bootstrap-icons.css",
-              "src/css/owl.carousel.min.css",
-              "src/css/owl.theme.default.min.css",
-              "src/css/templatemo-medic-care.css"
+              "src/css/font-awesome.min.css",
+              "src/css/style.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {
@@ -89,20 +89,23 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/img"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/css/bootstrap.min.css",
-              "src/css/bootstrap-icons.css",
-              "src/css/owl.carousel.min.css",
-              "src/css/owl.theme.default.min.css",
-              "src/css/templatemo-medic-care.css"
+              "src/css/font-awesome.min.css",
+              "src/css/style.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

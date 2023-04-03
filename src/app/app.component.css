@@ -7,7 +7,5 @@
 }
 
 .example-card {
-  max-width: 400px;
-  margin-bottom: 8px;
-  margin-top: 50px;
+  width: 400px;
 }

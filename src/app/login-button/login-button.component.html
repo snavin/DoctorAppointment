@@ -1,1 +1,9 @@
-<button mat-stroked-button color="warn" (click)="LoginDialog()">Login</button>
+<div *ngIf="!is_logged">
+    <button mat-stroked-button color="warn" (click)="LoginDialog()">Login</button>
+</div>
+
+<div *ngIf="is_logged">
+    <span>{{ username }}</span>
+    <br>
+    <button mat-stroked-button color="warn" (click)="logout()">Logout</button>
+</div>

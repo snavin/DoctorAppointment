@@ -1,21 +1,54 @@
 <h2 mat-dialog-title>Sign in</h2>
 <mat-dialog-content class="mat-typography">
-    <mat-tab-group>
-        <mat-tab label="Login"> 
-            <mat-form-field appearance="fill">
-                <mat-label>Input</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill">
-                <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
+    <mat-tab-group >
+        <mat-tab label="Login" > 
+            <form #userlogin = "ngForm" (ngSubmit)="login(userlogin.value)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput type = "text" name = "username" placeholder = "username" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" type = "password" name = "password" placeholder = "password" ngModel>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <div style="text-align: center;">
+                    <button mat-stroked-button color="primary">Sign In</button>
+                </div>
+                <button mat-button color="warn" (click)="googlesign()">Sign in with google</button>
+            </form>
         </mat-tab>
-        <mat-tab label="Signup"> 
+        <mat-tab label="Signup" >
+            <form #usersignup = "ngForm" (ngSubmit)="signup(usersignup.value)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput type = "text" name = "username" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" name = "passwordone" placeholder = "password" ngModel>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" name = "passwordtwo" placeholder = "password" ngModel>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <div style="text-align: center;">
+                    <button mat-stroked-button color="primary">Sign Up</button>
+                </div>
+            </form>
         </mat-tab>
     </mat-tab-group>
 </mat-dialog-content>
