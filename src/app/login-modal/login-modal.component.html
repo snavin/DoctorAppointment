@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Sign in</h2>
+<h2 mat-dialog-title>USER SIGN UP</h2>
 <mat-dialog-content class="mat-typography">
     <mat-tab-group >
         <mat-tab label="Login" > 
@@ -12,20 +12,21 @@
                     <mat-label>Enter your password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" type = "password" name = "password" placeholder = "password" ngModel>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-icon></mat-icon>
+                      <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
                     </button>
                 </mat-form-field>
                 <br>
                 <div style="text-align: center;">
                     <button mat-stroked-button color="primary">Sign In</button>
                 </div>
-                <button mat-button color="warn" (click)="googlesign()">Sign in with google</button>
+                <!-- <button mat-button color="warn" (click)="googlesign()">Sign in with google</button> -->
             </form>
         </mat-tab>
         <mat-tab label="Signup" >
             <form #usersignup = "ngForm" (ngSubmit)="signup(usersignup.value)">
                 <mat-form-field appearance="fill">
-                    <mat-label>email</mat-label>
+                    <mat-label>Username</mat-label>
                     <input matInput type = "text" name = "username" ngModel>
                 </mat-form-field>
                 <br>
@@ -33,7 +34,7 @@
                     <mat-label>Enter your password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" name = "passwordone" placeholder = "password" ngModel>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
                     </button>
                 </mat-form-field>
                 <br>
@@ -41,7 +42,7 @@
                     <mat-label>Enter your password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" name = "passwordtwo" placeholder = "password" ngModel>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
                     </button>
                 </mat-form-field>
                 <br>
