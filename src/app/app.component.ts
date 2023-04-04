@@ -88,7 +88,7 @@ export class AppComponent {
    
       console.log("list_doctors");
 
-      this.httpClient.post<doctor_http>('http://localhost:8000/api/listdoctors/', formData, {headers: headers}).subscribe((data_http: doctor_http) =>  {
+      this.httpClient.post<doctor_http>('http://13.48.23.181:8000/api/listdoctors/', formData, {headers: headers}).subscribe((data_http: doctor_http) =>  {
         
         for (let i = 0; i < data_http.data.length ; i++){
           this.doctorslist.push(data_http.data[i]);
@@ -117,7 +117,7 @@ export class AppComponent {
       formData.append('date', this.current_session_data.date);
       formData.append('doctor_id', event);
   
-      this.httpClient.post('http://localhost:8000/api/createappointment/', formData, {headers: headers}).subscribe((data) =>  {
+      this.httpClient.post('http://13.48.23.181:8000/api/createappointment/', formData, {headers: headers}).subscribe((data) =>  {
         this._snackBar.open( "Appointment has been booked", "success",{
           duration: 3000
         });
@@ -141,7 +141,7 @@ export class AppComponent {
       let headers = new HttpHeaders();
       headers = headers.append( "Authorization", 'Bearer ' + data.access )
   
-      this.httpClient.get<appointment_session_data>('http://localhost:8000/api/getappointment/', {headers: headers}).subscribe((data:appointment_session_data) => {
+      this.httpClient.get<appointment_session_data>('http://13.48.23.181:8000/api/getappointment/', {headers: headers}).subscribe((data:appointment_session_data) => {
         console.log(data.data);
         for (let i = 0; i < data.data.length ; i++){
           this.dataSource.push(data.data[i]);
@@ -174,7 +174,7 @@ export class AppComponent {
       var formData: any = new FormData();
       formData.append('id', event);
 
-      this.httpClient.post('http://localhost:8000/api/deleteappointment/', formData, {headers: headers}).subscribe((data) =>  {
+      this.httpClient.post('http://13.48.23.181:8000/api/deleteappointment/', formData, {headers: headers}).subscribe((data) =>  {
         this._snackBar.open( JSON.stringify(data), "success");
         this.getappointment();
         })

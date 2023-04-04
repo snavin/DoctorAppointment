@@ -27,7 +27,7 @@ export class LoginButtonComponent {
       let headers = new HttpHeaders();
       headers = headers.append( 'Content-Type', 'application/json'),
       headers = headers.append( "Authorization", 'Bearer ' + data.access )
-      this.httpClient.get('http://localhost:8000/api/validatetoken/', {headers: headers, observe: "response"}).subscribe(data => {
+      this.httpClient.get('http://13.48.23.181/:8000/api/validatetoken/', {headers: headers, observe: "response"}).subscribe(data => {
         console.log(data);
         if (data.status == 200){
           this.is_logged=true;

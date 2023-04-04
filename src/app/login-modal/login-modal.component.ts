@@ -37,7 +37,7 @@ export class LoginModalComponent {
     var formData: any = new FormData();
     formData.append('username', payload['username']);
     formData.append('password', payload['password']);
-    return this.httpClient.post('http://localhost:8000/api/log_in/', formData).pipe(map((data) => {
+    return this.httpClient.post('http://13.48.23.181:8000/api/log_in/', formData).pipe(map((data) => {
           
           var token = data as TokenModel;
           localStorage.setItem('tokens', JSON.stringify(token));
@@ -65,7 +65,7 @@ export class LoginModalComponent {
     formData.append('last_name', payload['username']);
     
 
-    this.httpClient.post('http://localhost:8000/api/sign_up/', formData).subscribe((data) => {
+    this.httpClient.post('http://13.48.23.181:8000/api/sign_up/', formData).subscribe((data) => {
       console.log(data);
       this._snackBar.open( "User has been created successfully", "success",{
         duration: 3000
