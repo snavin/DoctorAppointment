@@ -3,7 +3,5 @@
 </div>
 
 <div *ngIf="is_logged">
-    <span>{{ username }}</span>
-    <br>
-    <button mat-stroked-button color="warn" (click)="logout()">Logout</button>
+    <button mat-stroked-button color="warn" (click)="logout()">Logout</button><span style="margin-left: 5px;">{{ username }}</span>
 </div>
