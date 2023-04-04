@@ -49,7 +49,7 @@
                                   <div class="form-control">
                                     <label for="specality" style="margin-right: 30%;">Speciality</label>
                                     <select name="specality" id="specality" ngModel>
-                                      <option value="children_specialist">Children's Specialist</option>
+                                      <option value="childrenspecialist">Children's Specialist</option>
                                       <option value="dentist" ng-selected>Dentist</option>
                                       <option value="heart">heart</option>
                                       <option value="lungs">lungs</option>
@@ -77,8 +77,8 @@
                         </mat-form-field>
                         <button class="btn btn-outline-primary" (click)="doctorSearch()">search</button> -->
                         <input type="search" class="form-control rounded" matInput [(ngModel)] = "doctor_search_input" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                        <button type="button" style="margin-top: 2%;" class="btn btn-primary" (click)="doctorSearch()">search</button>
-                        <button type="button" style="margin-top: 2%;" class="btn btn-primary" (click)="doctorSearchReset()">reset</button>
+                        <button type="button" style="margin-top: 2%;" class="btn btn-primary" (click)="doctorSearch()">Search</button>
+                        <button type="button" style="margin-top: 2%;margin-left: 2%;" class="btn btn-primary" (click)="doctorSearchReset()">Reset</button>
                       </div>
                      
 
@@ -90,7 +90,7 @@
                                 <mat-card-title-group style="margin-top: 20px;">
                                   <mat-card-title>{{ each_doctor.name }}</mat-card-title>
                                   <mat-card-subtitle>{{ each_doctor.speciality }}</mat-card-subtitle>
-                                  <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="99px" width="150px">
+                                  <img  src="assets/img/doctor-symbol.jpg" height="99px" width="150px">
                                 </mat-card-title-group>
                               </mat-card-header>
                               <mat-card-actions align="end">
@@ -108,7 +108,7 @@
                                 <mat-card-title-group style="margin-top: 20px;">
                                   <mat-card-title>{{ each_doctor.name }}</mat-card-title>
                                   <mat-card-subtitle>{{ each_doctor.speciality }}</mat-card-subtitle>
-                                  <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="99px" width="150px">
+                                  <img src="assets/img/doctor-symbol.jpg" height="99px" width="150px">
                                 </mat-card-title-group>
                               </mat-card-header>
                               <mat-card-actions align="end">
